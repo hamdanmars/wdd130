@@ -10,7 +10,7 @@
 }
 
 header{
-  background-color: var(--primary-color);
+  background-color: var(--accent2-color);
   color: var(--accent1-color);
 }
 /* Reset box model */
@@ -23,7 +23,7 @@ header{
 /* Base styles */
 body {
   font-family: var(--body-font);
-  color: var(--accent1-color);
+  color: var(--primary-color);
 }
 
 /* Page layout container */
