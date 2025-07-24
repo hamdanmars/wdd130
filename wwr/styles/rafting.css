@@ -85,34 +85,36 @@ nav li a:hover {
 }
 
 /* Hero Article - Centered Version */
+/* Hero Article - Right-aligned with text flowing left */
 .hero article {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 20px; /* Positions container on the right */
+  bottom: 20px;
   background-color: rgba(58, 90, 120, 0.85);
   color: var(--accent2-color);
-  width: 80%;
-  max-width: 600px;
+  width: 45%; /* Adjust width as needed */
+  max-width: 500px;
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 1rem;
   backdrop-filter: blur(3px);
   border: 1px solid rgba(255,255,255,0.3);
 }
 
 .hero article img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 150px; /* Fixed rectangular width */
+  height: auto;
+  border-radius: 5px; /* Slightly rounded corners */
   object-fit: cover;
-  border: 3px solid var(--accent2-color);
-  margin: 0 auto 1rem;
-  display: block;
-  float: none; /* Remove float */
+  border: 2px solid var(--accent2-color);
+  align-self: flex-start; /* Aligns image to top */
+}
+
+.hero article p {
+  flex: 1; /* Makes text take remaining space */
+  text-align: left;
+  margin: 0; /* Removes default paragraph margins */
 }
 
 /* History Section */
