@@ -84,22 +84,35 @@ nav li a:hover {
   font-family: var(--heading-font);
 }
 
+/* Hero Article - Centered Version */
 .hero article {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: rgba(58, 90, 120, 0.75);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(58, 90, 120, 0.85);
   color: var(--accent2-color);
-  max-width: 400px;
-  padding: 1rem;
-  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .hero article img {
-  float: right;
-  width: 100px;
-  margin-left: 1rem;
-  border-radius: 5px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent2-color);
+  margin: 0 auto 1rem;
+  display: block;
+  float: none; /* Remove float */
 }
 
 /* History Section */
