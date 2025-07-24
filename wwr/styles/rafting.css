@@ -117,6 +117,25 @@ nav li a:hover {
   margin-bottom: 1.5rem;
 }
 
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+
+.history-left, .history-right {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.history-image {
+  display: flex;
+  justify-content: center;
+}
+
+
 .history-content {
   display: flex;
   flex-direction: column;
