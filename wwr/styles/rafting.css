@@ -1,4 +1,4 @@
-:root {
+    :root {
   --primary-color: #3A5A78;       /* Lapis Lazuli */
   --secondary-color: #5B8C5A;     /* SeaGreen */
   --accent1-color: #FFC857;       /* Sunglow */
@@ -61,14 +61,13 @@ nav li a:hover {
   border-radius: 4px;
 }
 
-/* ===== HERO SECTION - CENTERED ===== */
+/* ===== HERO SECTION ===== */
 .hero {
   position: relative;
   margin-bottom: 3rem;
-  text-align: center;
 }
 
-.hero img {
+.hero img[alt="Team rafting down wild river"] {
   width: 100%;
   height: auto;
   max-height: 500px;
@@ -91,37 +90,45 @@ nav li a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.hero article {
+.client-testimonial {
   position: absolute;
-  left: 50%;
-  bottom: 40px;
-  transform: translateX(-50%);
+  right: 50px;
+  bottom: 50px;
   background-color: rgba(58, 90, 120, 0.9);
   color: var(--accent2-color);
-  width: 80%;
-  max-width: 600px;
+  width: 45%;
+  max-width: 500px;
   padding: 1.5rem;
   border-radius: 8px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 1.5rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   border: 2px solid rgba(255,255,255,0.3);
 }
 
-.hero article img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--accent2-color);
-  margin-bottom: 1rem;
+.client-content {
+  flex: 1;
+}
+
+.client-content h3 {
+  color: var(--accent1-color);
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
 }
 
 .client-content p {
-  text-align: center;
-  margin: 0;
   line-height: 1.6;
+  margin: 0;
+}
+
+.client-testimonial img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 3px solid var(--accent2-color);
+  align-self: center;
 }
 
 /* ===== HISTORY SECTION ===== */
@@ -273,14 +280,18 @@ footer p {
     padding: 1rem;
   }
   
-  .hero article {
+  .client-testimonial {
     position: relative;
-    left: auto;
+    right: auto;
     bottom: auto;
-    transform: none;
-    width: 90%;
+    width: 85%;
     max-width: none;
-    margin: -30px auto 0;
+    margin: 1rem auto;
+    flex-direction: column;
+  }
+  
+  .client-testimonial img {
+    margin-top: 1rem;
   }
   
   .history-content {
