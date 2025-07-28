@@ -61,10 +61,11 @@ nav li a:hover {
   border-radius: 4px;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION - CENTERED ===== */
 .hero {
   position: relative;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .hero img {
@@ -92,30 +93,33 @@ nav li a:hover {
 
 .hero article {
   position: absolute;
-  right: 50px;
-  bottom: 50px;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
   background-color: rgba(58, 90, 120, 0.9);
   color: var(--accent2-color);
-  width: 45%;
-  max-width: 500px;
+  width: 80%;
+  max-width: 600px;
   padding: 1.5rem;
   border-radius: 8px;
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   border: 2px solid rgba(255,255,255,0.3);
 }
 
 .hero article img {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 50%;
   border: 3px solid var(--accent2-color);
-  align-self: flex-start;
+  margin-bottom: 1rem;
 }
 
 .client-content p {
+  text-align: center;
   margin: 0;
   line-height: 1.6;
 }
@@ -271,16 +275,12 @@ footer p {
   
   .hero article {
     position: relative;
-    right: auto;
+    left: auto;
     bottom: auto;
-    width: 85%;
+    transform: none;
+    width: 90%;
     max-width: none;
     margin: -30px auto 0;
-    flex-direction: column;
-  }
-  
-  .hero article img {
-    margin: 0 auto 1.5rem;
   }
   
   .history-content {
