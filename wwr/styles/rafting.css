@@ -90,31 +90,48 @@ nav li a:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+/* ===== HERO ARTICLE ===== */
 .hero article {
   position: absolute;
-  right: 50px;
-  bottom: 50px;
+  left: 2.5%;  
+  bottom: 40px;
+  width: 95%;  
+  max-width: none;  
   background-color: rgba(58, 90, 120, 0.9);
   color: var(--accent2-color);
-  width: 45%;
-  max-width: 500px;
   padding: 1.5rem;
   border-radius: 8px;
   display: flex;
   gap: 1.5rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   border: 2px solid rgba(255,255,255,0.3);
+  box-sizing: border-box; 
 }
 
-.hero article img {
-  width: 130px;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 3px solid var(--accent2-color);
-  align-self: flex-start;
+.client-content {
+  flex: 1; 
 }
 
+.client-content h3 {
+  color: var(--accent1-color);
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Responsive adjustment */
+@media (max-width: 900px) {
+  .hero article {
+    width: 90%;
+    left: 5%;
+    flex-direction: row; 
+  }
+  
+  .hero article img {
+    width: 100px; 
+    height: 100px;
+  }
+}
 .client-content p {
   margin: 0;
   line-height: 1.6;
