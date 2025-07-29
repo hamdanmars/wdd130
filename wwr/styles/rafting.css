@@ -96,7 +96,7 @@ nav li a:hover {
   bottom: 50px;
   background-color: rgba(58, 90, 120, 0.9);
   color: var(--accent2-color);
-  width: 85%;
+  width: 95%;
   max-width: 500px;
   padding: 1.5rem;
   border-radius: 8px;
@@ -107,7 +107,7 @@ nav li a:hover {
 }
 
 .hero article img {
-  width: 130px;
+  width: 180px;
   height: 130px;
   object-fit: cover;
   border-radius: 6px;
