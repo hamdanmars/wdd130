@@ -65,6 +65,7 @@ nav li a:hover {
 .hero {
   position: relative;
   margin-bottom: 3rem;
+  min-height: 150px;
 }
 
 .hero img {
