@@ -1,8 +1,11 @@
+
 :root {
   --primary-color: #3A5A78;       /* Lapis Lazuli */
   --secondary-color: #5B8C5A;     /* SeaGreen */
   --accent1-color: #FFC857;       /* Sunglow */
   --accent2-color: #FFFFFF;       /* White */
+  --light-bg: #f8f9fa;            /* Light background */
+  --dark-bg: #2a4560;             /* Darker primary */
   --heading-font: Georgia, serif;
   --body-font: "Lato", sans-serif;
 }
@@ -18,6 +21,9 @@ body {
   color: #333;
   background-color: var(--accent2-color);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== HEADER ===== */
@@ -38,6 +44,7 @@ nav ul {
   display: flex;
   gap: 1.5rem;
   list-style: none;
+  justify-content: center;
 }
 
 nav li a {
@@ -55,22 +62,22 @@ nav li a.active {
   border-radius: 4px;
 }
 
-/* ===== HERO SECTION ===== */
-.hero {
+/* ===== HERO SECTIONS ===== */
+.hero, .home-hero, .trips-hero {
   position: relative;
   margin-bottom: 3rem;
-  min-height: 150px;
+  height: 500px;
+  overflow: hidden;
 }
 
-.hero img {
+.hero img, .home-hero img, .trips-hero img {
   width: 100%;
   height: 100%;
-  max-height: 700px;
   object-fit: cover;
   display: block;
 }
 
-.hero h1 {
+.hero h1, .trips-hero h1 {
   position: absolute;
   top: 40px;
   left: 0;
@@ -85,14 +92,42 @@ nav li a.active {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 90%;
+  max-width: 800px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content h1 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  position: static;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Client Testimonial/Article */
 .hero article {
-  position: relative;
+  position: absolute;
   right: 50px;
   bottom: 50px;
   background-color: rgba(58, 90, 120, 0.9);
   color: var(--accent2-color);
   width: 90%;
-  max-width: 600%;
+  max-width: 600px;
   padding: 1.5rem;
   border-radius: 8px;
   display: flex;
@@ -117,15 +152,364 @@ nav li a.active {
   line-height: 1.6;
 }
 
-/* ===== CONTACT PAGE ===== */
+/* ===== MAIN CONTENT ===== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex: 1;
+  width: 100%;
+}
+
 main h1 {
   text-align: center;
   font-family: var(--heading-font);
   color: var(--primary-color);
-  margin-top: 2rem;
+  margin: 2rem 0;
   font-size: 2rem;
 }
 
+.section-title {
+  text-align: center;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: var(--accent1-color);
+  margin: 0.5rem auto;
+}
+
+/* ===== HOME PAGE ===== */
+.newsletter {
+  background-color: var(--light-bg);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+}
+
+.newsletter h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-size: 1.8rem;
+}
+
+.newsletter h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--accent1-color);
+  margin: 0.5rem auto;
+}
+
+.newsletter-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.newsletter-form input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.newsletter-form button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-family: var(--body-font);
+}
+
+.newsletter-form button:hover {
+  background-color: #4a7a49;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.grid-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+}
+
+.grid-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.grid-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover .grid-image img {
+  transform: scale(1.05);
+}
+
+.grid-content {
+  padding: 1.5rem;
+}
+
+.grid-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.grid-content p {
+  margin-bottom: 1rem;
+}
+
+.grid-content ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.grid-content li {
+  margin-bottom: 0.5rem;
+}
+
+.trip-cta {
+  background-color: var(--primary-color);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+}
+
+.trip-cta h2 {
+  font-family: var(--heading-font);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* ===== ABOUT PAGE ===== */
+.history {
+  margin: 3rem 0;
+}
+
+.history-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.history-image img {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.adventure-gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.adventure-gallery figure {
+  text-align: center;
+  flex: 1;
+  min-width: 180px;
+}
+
+.adventure-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: 150px;
+  object-fit: cover;
+}
+
+/* ===== TRIPS PAGE ===== */
+.cta-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--secondary-color);
+  color: white;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+}
+
+.cta-section h2 {
+  font-family: var(--heading-font);
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent1-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--accent1-color);
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: var(--accent1-color);
+  transform: translateY(-3px);
+}
+
+.trip-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-10px);
+}
+
+.trip-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.trip-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.trip-card:hover .trip-image img {
+  transform: scale(1.05);
+}
+
+.trip-content {
+  padding: 1.5rem;
+}
+
+.trip-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.trip-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0.8rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.trip-meta div {
+  text-align: center;
+  flex: 1;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.book-button {
+  display: block;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.book-button:hover {
+  background-color: var(--dark-bg);
+}
+
+.trips-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+th {
+  padding: 1rem;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--light-bg);
+}
+
+td {
+  padding: 1rem;
+}
+
+/* ===== CONTACT PAGE ===== */
 .contact-info, .contact-form, .employees {
   max-width: 1000px;
   margin: 3rem auto;
@@ -145,6 +529,7 @@ main h1 {
 .contact-info p {
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .map-container {
@@ -178,12 +563,19 @@ main h1 {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: 180px;
+  object-fit: cover;
 }
 
 .contact-form form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 8px;
 }
 
 .contact-form input[type="text"],
@@ -197,10 +589,17 @@ main h1 {
 
 .contact-form textarea {
   resize: vertical;
+  min-height: 150px;
 }
 
 .contact-form label {
   font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.contact-form .radio-group {
+  margin: 1rem 0;
 }
 
 .contact-form button {
@@ -213,6 +612,7 @@ main h1 {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 .contact-form button:hover {
@@ -258,6 +658,11 @@ footer a {
   height: 28px;
 }
 
+/* ===== UTILITY CLASSES ===== */
+.text-center {
+  text-align: center;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   header {
@@ -268,18 +673,24 @@ footer a {
 
   nav ul {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
-  .hero h1 {
+  .hero, .home-hero, .trips-hero {
+    height: 400px;
+  }
+
+  .hero h1, .trips-hero h1 {
     top: 20px;
     font-size: 1.8rem;
     padding: 1rem;
   }
 
   .hero article {
+    position: relative;
     right: auto;
     bottom: auto;
-    width: 85%;
+    width: 90%;
     margin: -30px auto 0;
     flex-direction: column;
   }
@@ -290,9 +701,15 @@ footer a {
 
   .history-content {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  .employee-gallery {
+  .history-image {
+    order: -1;
+    margin: 0 auto 2rem;
+  }
+
+  .employee-gallery, .adventure-gallery {
     flex-direction: column;
     align-items: center;
   }
@@ -300,17 +717,7 @@ footer a {
   .map-container iframe {
     height: 300px;
   }
-}
-
-@media (max-width: 600px) {
-  .adventure-gallery {
-    justify-content: center;
-  }
-
-  .adventure-gallery figure {
-    min-width: 120px;
-  }
-
+  
   footer {
     flex-direction: column;
     gap: 1rem;
@@ -318,3 +725,33 @@ footer a {
   }
 }
 
+@media (max-width: 600px) {
+  .hero, .home-hero, .trips-hero {
+    height: 300px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .adventure-gallery figure {
+    min-width: 100%;
+  }
+  
+  .trip-cards, .grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .trip-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .employee-gallery figure {
+    max-width: 100%;
+  }
+  
+  .contact-form form {
+    padding: 1.5rem;
+  }
+}

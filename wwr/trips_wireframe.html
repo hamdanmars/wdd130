@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trips Page Wireframe - White Water Rafting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f7ff;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .wireframe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #3A5A78;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 50px;
+            background: #5B8C5A;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+        
+        nav li {
+            width: 80px;
+            height: 30px;
+            background: #FFC857;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        nav li.active {
+            background: #FFFFFF;
+            font-weight: bold;
+        }
+        
+        .hero {
+            background: #c1d8e6;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px dashed #7f9fb6;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            text-align: center;
+            max-width: 80%;
+        }
+        
+        .step {
+            padding: 30px;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #3A5A78;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .step-title {
+            display: inline-block;
+            font-size: 24px;
+            color: #3A5A78;
+            margin-bottom: 20px;
+        }
+        
+        .step-content {
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .cta-section {
+            background: #5B8C5A;
+            padding: 25px;
+            text-align: center;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #FFC857;
+            color: #333;
+            padding: 12px 25px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .trip-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .trip-card {
+            border: 2px dashed #7f9fb6;
+            border-radius: 8px;
+            padding: 20px;
+            background: #f0f7ff;
+        }
+        
+        .trip-image {
+            height: 150px;
+            background: #c1d8e6;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2c3e50;
+        }
+        
+        .trip-details h3 {
+            color: #3A5A78;
+            margin-bottom: 10px;
+        }
+        
+        .trip-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding: 10px 0;
+            border-top: 1px dashed #ccc;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .meta-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .book-button {
+            background: #3A5A78;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .trips-table {
+            border: 2px dashed #7f9fb6;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: #3A5A78;
+            color: white;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f0f7ff;
+        }
+        
+        footer {
+            padding: 25px;
+            background: #3A5A78;
+            color: white;
+            text-align: center;
+        }
+        
+        .wireframe-link {
+            display: inline-block;
+            background: #FFC857;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .annotation {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+            border-left: 3px solid #FFC857;
+        }
+        
+        .instructions {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .instructions h2 {
+            color: #3A5A78;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FFC857;
+        }
+        
+        .instructions ul {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        .instructions li {
+            margin-bottom: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .trip-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>Trips Page Wireframe Guide</h2>
+        <p>This wireframe shows the structure for the White Water Rafting Trips page. Follow these steps to implement it:</p>
+        
+        <ul>
+            <li><strong>Header:</strong> Keep consistent with other pages</li>
+            <li><strong>Hero Section:</strong> Large banner with compelling title</li>
+            <li><strong>Call to Action:</strong> Prominent section encouraging contact</li>
+            <li><strong>Trip Cards:</strong> 3 detailed trip descriptions with images</li>
+            <li><strong>Trips Table:</strong> Comprehensive table of all available trips</li>
+            <li><strong>Footer:</strong> Consistent with other pages, plus wireframe link</li>
+        </ul>
+        
+        <p>Each section is annotated below with implementation notes.</p>
+    </div>
+
+    <div class="wireframe-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">LOGO</div>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li class="active">Trips</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Unforgettable Rafting Adventures</h1>
+        </div>
+        
+        <!-- Step 1: Call to Action -->
+        <div class="step">
+            <div>
+                <span class="step-number">1</span>
+                <h2 class="step-title">Call to Action</h2>
+            </div>
+            <div class="step-content">
+                <div class="cta-section">
+                    <h3>Ready for Your Next Adventure?</h3>
+                    <p>Have questions? Our team is ready to help you choose the perfect trip!</p>
+                    <a href="#" class="cta-button">Contact Us</a>
+                </div>
+                <div class="annotation">
+                    This section should encourage visitors to contact the company. Place it prominently below the hero banner.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 2: Featured Trips -->
+        <div class="step">
+            <div>
+                <span class="step-number">2</span>
+                <h2 class="step-title">Featured Trips</h2>
+            </div>
+            <div class="step-content">
+                <div class="trip-cards">
+                    <!-- Trip 1 -->
+                    <div class="trip-card">
+                        <div class="trip-image">Trip Image</div>
+                        <div class="trip-details">
+                            <h3>Wild Rapids Adventure</h3>
+                            <p>Experience thrilling Class IV rapids on this adrenaline-pumping adventure.</p>
+                            <div class="trip-meta">
+                                <div class="meta-item">
+                                    <div>2 Days</div>
+                                    <small>Duration</small>
+                                </div>
+                                <div class="meta-item">
+                                    <div>Class IV</div>
+                                    <small>Difficulty</small>
+                                </div>
+                                <div class="meta-item">
+                                    <div>$199</div>
+                                    <small>Price</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-button">Book Now</div>
+                    </div>
+                    
+                    <!-- Trip 2 -->
+                    <div class="trip-card">
+                        <div class="trip-image">Trip Image</div>
+                        <div class="trip-details">
+                            <h3>Family Float Trip</h3>
+                            <p>Gentle river float perfect for families with beautiful scenery.</p>
+                            <div class="trip-meta">
+                                <div class="meta-item">
+                                    <div>1 Day</div>
+                                    <small>Duration</small>
+                                </div>
+                                <div class="meta-item">
+                                    <div>Class II</div>
+                                    <small>Difficulty</small>
+                                </div>
+                                <div class="meta-item">
+                                    <div>$89</div>
+                                    <small>Price</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-button">Book Now</div>
+                    </div>
+                    
+                    <!-- Trip 3 -->
+                    <div class="trip-card">
+                        <div class="trip-image">Trip Image</div>
+                        <div class="trip-details">
+                            <h3>Wilderness Expedition</h3>
+                            <p>5-day expedition through pristine wilderness with camping.</p>
+                            <div class="trip-meta">
+                                <div class="meta-item">
+                                    <div>5 Days</div>
+                                    <small>Duration</small>
+                                </div>
+                                <div class="meta-item">
+                                    <div>Class III</div>
+                                    <small>Difficulty</small>
+                                </div>
+                                <div class="meta-item">
+                                    <div>$599</div>
+                                    <small>Price</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-button">Book Now</div>
+                    </div>
+                </div>
+                <div class="annotation">
+                    Showcase 3 featured trips with images, descriptions, key details, and booking buttons.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Step 3: Trips Table -->
+        <div class="step">
+            <div>
+                <span class="step-number">3</span>
+                <h2 class="step-title">All Available Trips</h2>
+            </div>
+            <div class="step-content">
+                <div class="trips-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Trip Name</th>
+                                <th>Duration</th>
+                                <th>Difficulty</th>
+                                <th>Group Size</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wild Rapids Adventure</td>
+                                <td>2 Days</td>
+                                <td>Class IV</td>
+                                <td>6-8 People</td>
+                                <td>$199</td>
+                            </tr>
+                            <tr>
+                                <td>Family Float Trip</td>
+                                <td>1 Day</td>
+                                <td>Class II</td>
+                                <td>4-10 People</td>
+                                <td>$89</td>
+                            </tr>
+                            <tr>
+                                <td>Wilderness Expedition</td>
+                                <td>5 Days</td>
+                                <td>Class III-IV</td>
+                                <td>4-6 People</td>
+                                <td>$599</td>
+                            </tr>
+                            <tr>
+                                <td>Beginner's Journey</td>
+                                <td>Half Day</td>
+                                <td>Class I-II</td>
+                                <td>6-12 People</td>
+                                <td>$59</td>
+                            </tr>
+                            <tr>
+                                <td>Extreme Challenge</td>
+                                <td>3 Days</td>
+                                <td>Class V</td>
+                                <td>4-6 People</td>
+                                <td>$349</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="annotation">
+                    Include a comprehensive table of all available trips with essential information for easy comparison.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 White Water Rafting | Lule Hamudan | WDD130</p>
+            <a href="images/trips-wireframe.jpg" class="wireframe-link">View Trips Page Wireframe</a>
+            <div class="annotation">
+                Remember to include this wireframe link only on the Trips page footer
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

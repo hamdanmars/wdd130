@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experience thrilling white water rafting adventures with expert guides. Book your unforgettable journey today!">
+  <meta name="author" content="Lule Hamudan">
+  <title>Home | White Water Rafting Adventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/rafting.css">
+  <style>
+    /* Home page specific styles */
+    .hero {
+      position: relative;
+      margin-bottom: 3rem;
+      height: 500px;
+      overflow: hidden;
+    }
+    
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      width: 90%;
+      max-width: 800px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: #FFC857;
+      color: #3A5A78;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      border: 2px solid #FFC857;
+    }
+    
+    .cta-button:hover {
+      background-color: transparent;
+      color: #FFC857;
+      transform: translateY(-3px);
+    }
+    
+    .newsletter {
+      background-color: #f8f9fa;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .newsletter h2 {
+      font-family: Georgia, serif;
+      color: #3A5A78;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .newsletter h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #FFC857;
+      margin: 0.5rem auto;
+    }
+    
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+    
+    .newsletter-form input {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    .newsletter-form button {
+      background-color: #5B8C5A;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background-color: #4a7a49;
+    }
+    
+    .grid-section {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      color: #3A5A78;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: #FFC857;
+      margin: 0.5rem auto;
+    }
+    
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .grid-item {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .grid-item:hover {
+      transform: translateY(-10px);
+    }
+    
+    .grid-image {
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .grid-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .grid-item:hover .grid-image img {
+      transform: scale(1.05);
+    }
+    
+    .grid-content {
+      padding: 1.5rem;
+    }
+    
+    .grid-content h3 {
+      color: #3A5A78;
+      margin-bottom: 1rem;
+    }
+    
+    .trip-cta {
+      background-color: #3A5A78;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: white;
+      margin-bottom: 3rem;
+    }
+    
+    .trip-cta h2 {
+      font-family: Georgia, serif;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        height: 400px;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .newsletter-form {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero {
+        height: 300px;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="images/wwr-logo.png" alt="White Water Rafting Company Logo">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="trips.html">Trips</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="images/home-hero.jpg" alt="Exciting white water rafting adventure">
+      <div class="hero-content">
+        <h1>Experience the Thrill of White Water Rafting</h1>
+        <p>Join us for unforgettable adventures on the world's most exciting rivers</p>
+        <a href="trips.html" class="cta-button">Book Your Adventure</a>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <h2>Stay Updated with Our Latest Adventures</h2>
+      <p>Subscribe to our newsletter for exclusive offers and trip updates</p>
+      <form class="newsletter-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Purpose and Offerings Grid -->
+    <section class="grid-section">
+      <h2 class="section-title">Why Choose Our Rafting Adventures</h2>
+      
+      <div class="grid-container">
+        <!-- Purpose -->
+        <div class="grid-item">
+          <div class="grid-image">
+            <img src="images/purpose.jpg" alt="Our rafting purpose">
+          </div>
+          <div class="grid-content">
+            <h3>Our Purpose</h3>
+            <p>At White Water Rafting Adventures, we're passionate about connecting people with nature through exhilarating river experiences. Our mission is to provide safe, unforgettable adventures that challenge and inspire.</p>
+            <p>We believe in sustainable tourism practices that preserve our rivers for future generations while supporting local communities.</p>
+          </div>
+        </div>
+        
+        <!-- Offerings -->
+        <div class="grid-item">
+          <div class="grid-image">
+            <img src="images/offerings.jpg" alt="Our rafting offerings">
+          </div>
+          <div class="grid-content">
+            <h3>Our Offerings</h3>
+            <p>We offer a wide range of rafting experiences suitable for all skill levels:</p>
+            <ul>
+              <li>Family-friendly float trips with gentle rapids</li>
+              <li>Adrenaline-pumping Class IV-V expeditions</li>
+              <li>Multi-day wilderness camping adventures</li>
+              <li>Corporate team-building excursions</li>
+              <li>Customized private trips</li>
+            </ul>
+            <p>All trips include professional guides, top-quality equipment, and safety briefings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action - Trips Page -->
+    <section class="trip-cta">
+      <h2>Ready for Your Next Adventure?</h2>
+      <p>Explore our exciting rafting trips and find the perfect adventure for you!</p>
+      <a href="trips.html" class="cta-button">View All Trips</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 White Water Rafting | Lule Hamudan | WDD130 | 
+      <a href="images/home-wireframe.jpg" target="_blank">View Home Page Wireframe</a>
+    </p>
+    <nav class="socialmedia">
+      <a href="https://facebook.com"><img src="images/facebook.svg" alt="Find Us on Facebook"></a>
+      <a href="https://twitter.com"><img src="images/twitter.svg" alt="Follow Us on Twitter"></a>
+      <a href="https://instagram.com"><img src="images/instagram.svg" alt="Follow Us on Instagram"></a>
+    </nav>
+  </footer>
+</body>
+</html>
